@@ -56,7 +56,7 @@ To get a local copy of this project on your machine, follow these steps:
     Replace `<repository_url>` with the actual URL of the repository you want to clone. You can find this URL on the repository's page (usually a green "Code" button). It will look something like this:
 
     ```
-    git clone https://github.com/RhismaSyahrulPutra/backend-ai
+    git clone https://github.com/RhismaSyahrulPutra/web-scraping-api
     ```
 
 4.  **The repository will be downloaded to your local machine.** A new directory with the same name as the repository will be created in the directory you specified.
@@ -64,7 +64,7 @@ To get a local copy of this project on your machine, follow these steps:
 5.  **Navigate into the newly created directory:**
 
     ```bash
-    cd backend-ai
+    cd web-scraping-api
     ```
 
 You now have a local copy of the project and can start working on it!
@@ -73,7 +73,7 @@ You now have a local copy of the project and can start working on it!
 
 1.  **Install Dependencies:**
 
-    Open your terminal, navigate to the `backend-ai` directory (or the root directory if the instructions are for the root), and run the following command to install all necessary dependencies:
+    Open your terminal, navigate to the `web-scraping-api` directory (or the root directory if the instructions are for the root), and run the following command to install all necessary dependencies:
 
     ```bash
     npm install
@@ -132,7 +132,7 @@ You now have a local copy of the project and can start working on it!
 
    - Open **Postman**.
 
-     > **Note:** If you don’t have Postman installed, you can download it here:  
+     > [!Note:] If you don’t have Postman installed, you can download it here:  
      > [Download Postman](https://www.postman.com/downloads/)
 
    - Go to **Collections** and change the HTTP method to **GET**.  
@@ -160,6 +160,8 @@ You now have a local copy of the project and can start working on it!
      ![Send Request](assets/postman-send.png)
    - Wait for the scraping process to finish.  
      ![Scraping in Progress](assets/vscode-scraping.png)
+     > [!NOTE]  
+     > The scraping process will cover 5 pages, retrieving the top 10 items from each page.
 
 4. **View the Results**
    - The scraping results will be displayed in the **Response** tab of Postman.  
