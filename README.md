@@ -69,7 +69,7 @@ To get a local copy of this project on your machine, follow these steps:
 
 You now have a local copy of the project and can start working on it!
 
-### Cloning the Repository
+### Local Project Setup
 
 1.  **Install Dependencies:**
 
@@ -132,7 +132,8 @@ You now have a local copy of the project and can start working on it!
 
    - Open **Postman**.
 
-     > [!Note:] If you don’t have Postman installed, you can download it here:  
+     > [!NOTE]
+     > If you don’t have Postman installed, you can download it here:  
      > [Download Postman](https://www.postman.com/downloads/)
 
    - Go to **Collections** and change the HTTP method to **GET**.  
