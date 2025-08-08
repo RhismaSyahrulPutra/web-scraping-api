@@ -66,34 +66,48 @@ const scrapeProductList = async (keyword) => {
             'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/115.0.0.0 Safari/537.36'
           );
           await detailPage.goto(item.detailUrl, {
-            waitUntil: 'domcontentloaded',
-            timeout: 45000,
+            waitUntil: 'networkidle2',
+            timeout: 60000,
           });
 
-          await new Promise((r) => setTimeout(r, 1500));
+          await new Promise((r) => setTimeout(r, 3000));
 
           const rawDesc = await detailPage.evaluate(() => {
-            /* eslint-disable no-undef, no-unused-vars */
-            try {
-              const section = document.querySelector(
-                '#viTabs_0_is .ux-layout-section__item'
-              );
-              const iframe = document.querySelector('#desc_ifr');
-              const shortDesc = document.querySelector('#itemTitle');
-              return (
-                section?.innerText?.trim() ||
-                iframe?.innerText?.trim() ||
-                shortDesc?.innerText?.trim() ||
-                '-'
-              );
-            } catch (e) {
-              return '-';
+            const selectors = [
+              '#viTabs_0_is .ux-layout-section__item',
+              '#productDescription',
+              '#desc_div',
+              '#itemDescription',
+              '#viTabs_0_is section',
+              '#itemTitle',
+            ];
+            for (const sel of selectors) {
+              const el = document.querySelector(sel);
+              if (el && el.innerText.trim()) return el.innerText.trim();
             }
-            /* eslint-enable no-undef, no-unused-vars */
+            return null;
           });
 
-          if (rawDesc && rawDesc !== '-') {
-            description = await summarizeTextWithGranite(rawDesc);
+          // kalau iframe
+          if (!rawDesc) {
+            const iframeHandle = await detailPage.$('#desc_ifr');
+            if (iframeHandle) {
+              const frame = await iframeHandle.contentFrame();
+              if (frame) {
+                const iframeDesc = await frame.$eval('body', (el) =>
+                  el.innerText.trim()
+                );
+                if (iframeDesc) {
+                  description = iframeDesc;
+                }
+              }
+            }
+          } else {
+            description = rawDesc;
+          }
+
+          if (description && description !== '-') {
+            description = await summarizeTextWithGranite(description);
           }
 
           await detailPage.close();

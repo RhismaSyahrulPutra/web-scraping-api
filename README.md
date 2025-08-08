@@ -161,6 +161,7 @@ You now have a local copy of the project and can start working on it!
      ![Send Request](assets/postman-send.png)
    - Wait for the scraping process to finish.  
      ![Scraping in Progress](assets/vscode-scraping.png)
+
      > [!NOTE]  
      > The scraping process will cover 5 pages, retrieving the top 10 items from each page.
 
