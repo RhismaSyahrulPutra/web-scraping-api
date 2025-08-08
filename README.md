@@ -132,29 +132,29 @@ You now have a local copy of the project and can start working on it!
 
    - Open **Postman**.
 
-     > [!NOTE]
-     > If you don’t have Postman installed, you can download it here:  
-     > [Download Postman](https://www.postman.com/downloads/)
+> [!NOTE]
+> If you don’t have Postman installed, you can download it here:  
+> [Download Postman](https://www.postman.com/downloads/)
 
-   - Go to **Collections** and change the HTTP method to **GET**.  
-     ![Change Method to GET](assets/postman-get.png)
+- Go to **Collections** and change the HTTP method to **GET**.  
+  ![Change Method to GET](assets/postman-get.png)
 
-   - Enter your `localhost` URL:
+- Enter your `localhost` URL:
 
-     ```bash
-     http://localhost:3000
-     ```
+  ```bash
+  http://localhost:3000
+  ```
 
-   - Add the route for the API endpoint:
+- Add the route for the API endpoint:
 
-     ```bash
-     http://localhost:3000/api/scrape
-     ```
+  ```bash
+  http://localhost:3000/api/scrape
+  ```
 
-   - Add a query parameter for the keyword you want to scrape:
-     ```bash
-     http://localhost:3000/api/scrape?keyword=[product name]
-     ```
+- Add a query parameter for the keyword you want to scrape:
+  ```bash
+  http://localhost:3000/api/scrape?keyword=[product name]
+  ```
 
 3. **Send the Request**
    - Click the **Send** button in Postman.  
@@ -162,8 +162,8 @@ You now have a local copy of the project and can start working on it!
    - Wait for the scraping process to finish.  
      ![Scraping in Progress](assets/vscode-scraping.png)
 
-     > [!NOTE]  
-     > The scraping process will cover 5 pages, retrieving the top 10 items from each page.
+> [!NOTE]  
+> The scraping process will cover 5 pages, retrieving the top 10 items from each page.
 
 4. **View the Results**
    - The scraping results will be displayed in the **Response** tab of Postman.  
