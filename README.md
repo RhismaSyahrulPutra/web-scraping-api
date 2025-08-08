@@ -132,9 +132,9 @@ You now have a local copy of the project and can start working on it!
 
    - Open **Postman**.
 
-     > [!NOTE]
-     > If you don’t have Postman installed, you can download it here:  
-     > [Download Postman](https://www.postman.com/downloads/)
+> [!NOTE]
+> If you don’t have Postman installed, you can download it here:  
+> [Download Postman](https://www.postman.com/downloads/)
 
    - Go to **Collections** and change the HTTP method to **GET**.  
      ![Change Method to GET](assets/postman-get.png)
@@ -161,8 +161,9 @@ You now have a local copy of the project and can start working on it!
      ![Send Request](assets/postman-send.png)
    - Wait for the scraping process to finish.  
      ![Scraping in Progress](assets/vscode-scraping.png)
-     > [!NOTE]  
-     > The scraping process will cover 5 pages, retrieving the top 10 items from each page.
+     
+> [!NOTE]  
+> The scraping process will cover 5 pages, retrieving the top 10 items from each page.
 
 4. **View the Results**
    - The scraping results will be displayed in the **Response** tab of Postman.  
